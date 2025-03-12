@@ -1,0 +1,7 @@
+Este sirve para poder seleccionar elementos duplicados
+
+
+SELECT email
+FROM person
+GROUP BY email
+HAVING COUNT(*) > 1;
