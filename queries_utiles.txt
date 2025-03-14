@@ -1,7 +1,45 @@
-Este sirve para poder seleccionar elementos duplicados
+##Este sirve para poder seleccionar elementos duplicados
 
 
 SELECT email
 FROM person
 GROUP BY email
 HAVING COUNT(*) > 1;
+
+## Respuesta del Query 183
+
+SELECT e1.name, e1.id
+FROM costumers e1
+JOIN orders e2 on e1.id = e2.costumerId
+
+
+## Esta es la respuesta
+SELECT e1.name as costumer 
+FROM costumers e1
+LEFT JOIN orders e2 ON e1.id = e2.costumerId
+WHERE e2.costumerId IS NULL;
+
+#Respuesta del ejercicio 181
+
+
+SELECT e1.name AS employee
+FROM employee e1
+JOIN employee e2 ON e1.managerId = e2.id
+WHERE e1.salary > e2.salary;
+
+
+select e3.id,e3.name, e3.salary, e4.salary, e4.name, e3.managerId  as employee
+from employee e3
+join employee e4 on e3.managerId = e4.id
+where e3.salary < e4.salary;
+
+
+select e5.name as name
+from employee e5
+join employee e6 on e5.managerId = e6.id
+where e5.salary = e6.salary;
+
+
+select name
+from employee 
+where salary = salary;
